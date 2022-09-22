@@ -29,15 +29,13 @@ $result = mysqli_query($connect, $query) or die( mysqli_error($connect));
 
 if (!$result) {
 echo "Tên đăng nhập hoặc mật khẩu không đúng!";
-} else {
-echo "Đăng nhập thành công!";
-}
+} 
   
 //Lấy mật khẩu trong database ra
 $row = mysqli_fetch_array($result);
   
 //So sánh 2 mật khẩu có trùng khớp hay không
-if ($password != $row['password']) {
+if ($password != isset($row['password'])) {
 echo "Mật khẩu không đúng. Vui lòng nhập lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
 exit;
 }

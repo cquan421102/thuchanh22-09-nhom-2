@@ -27,10 +27,6 @@ $query = "SELECT username, password FROM member WHERE username='$username'";
 
 $result = mysqli_query($connect, $query) or die( mysqli_error($connect));
 
-if (!$result) {
-echo "Tên đăng nhập hoặc mật khẩu không đúng!";
-} 
-  
 //Lấy mật khẩu trong database ra
 $row = mysqli_fetch_array($result);
   
